@@ -18,11 +18,11 @@
 image:
   livy:
     repository: asifkhatri/livy
-    tag: spark3.2.3
+    tag: spark3.5.0
     pullPolicy: IfNotPresent # pullPolicy can be Always or IfNotPresent or Never
   spark:
-    repository: asifkhatri/spark-py
-    tag: v3.2.3
+    repository: apache/spark
+    tag: 3.5.0-scala2.12-java11-python3-r-ubuntu
     pullPolicy: IfNotPresent
 
 tags:
