@@ -134,7 +134,7 @@ Here’s how you can include and deploy Grafana using the official Helm chart:
    Use the Helm CLI to install Grafana with the customized `values.yaml` file:
 
    ```sh
-   helm install grafana grafana/grafana -f values.yaml
+   helm uninstall grafana grafana/grafana -f values.yaml
    ```
 
 4. **Access Grafana:**
@@ -155,3 +155,8 @@ Here’s how you can include and deploy Grafana using the official Helm chart:
 ### Summary
 
 Grafana is not natively built into Kubernetes, but it can be easily deployed using the official Helm chart. The above steps guide you through adding the Grafana Helm repository, creating a custom `values.yaml` file, installing Grafana, and accessing the Grafana dashboard. This approach allows you to configure Grafana to meet your specific requirements within your Kubernetes environment.
+
+
+tX5aAMV2uuptA3bZF1XG0RECJxUxfJrEhY00Mos2
+
+

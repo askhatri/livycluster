@@ -1,0 +1,107 @@
+persistence:
+  enabled: true
+  storageClassName: "standard"
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
+
+adminUser: admin
+adminPassword: admin
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        access: proxy
+        url: http://prometheus-server
+        isDefault: true
+
+dashboards:
+  default:
+    my-dashboard:
+      json: |
+        {
+          "annotations": {
+            "list": [
+              {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+              }
+            ]
+          },
+          "editable": true,
+          "gnetId": null,
+          "graphTooltip": 0,
+          "id": null,
+          "iteration": 1603477003621,
+          "links": [],
+          "panels": [
+            {
+              "datasource": "Prometheus",
+              "fieldConfig": {
+                "defaults": {
+                  "color": {
+                    "mode": "thresholds"
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": null
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                }
+              },
+              "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 0
+              },
+              "id": 2,
+              "options": {
+                "orientation": "auto"
+              },
+              "pluginVersion": "7.3.1",
+              "targets": [
+                {
+                  "expr": "up",
+                  "interval": "",
+                  "legendFormat": "",
+                  "refId": "A"
+                }
+              ],
+              "title": "Panel Title",
+              "type": "timeseries"
+            }
+          ],
+          "refresh": "",
+          "schemaVersion": 27,
+          "style": "dark",
+          "tags": [],
+          "templating": {
+            "list": []
+          },
+          "time": {
+            "from": "now-6h",
+            "to": "now"
+          },
+          "timepicker": {},
+          "timezone": "",
+          "title": "New dashboard",
+          "uid": "kGVmfPaMk",
+          "version": 1
+        }
