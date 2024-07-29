@@ -34,3 +34,23 @@ export POD_NAME=$(kubectl get pods --namespace monitoring -l "app.kubernetes.io/
 ```
 mYUp82wKfdzmUJNgJSmTDLEIM1tKEcjWxpc3cv1x
 
+Install 6417 daskboard
+
+https://grafana.com/grafana/dashboards/6417-kubernetes-cluster-prometheus/
+
+https://artifacthub.io/packages/helm/prometheus-community/prometheus
+
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+
+helm install [RELEASE_NAME] prometheus-community/prometheus
+
+helm install my-prometheus prometheus-community/prometheus
+
+my-prometheus-server
+
+
+
+helm kubernetes grafana cluster prometheus
+
+
